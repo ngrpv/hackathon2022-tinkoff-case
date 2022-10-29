@@ -5,12 +5,8 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity(name = "users")
-class User(val userName: String, val email: String, val password: String) {
-    constructor() : this("","","") {
+class User(@Id val email: String, val userName: String, var isActive:Boolean) {
+    constructor() : this("","",false) {
 
     }
-
-    @Id
-    @GeneratedValue
-    val id : Long=0;
 }

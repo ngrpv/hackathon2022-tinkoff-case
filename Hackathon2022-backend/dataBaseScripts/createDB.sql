@@ -1,7 +1,5 @@
 create database tink;
 
-/*drop database users*/
+drop table users
 
-create table users(
-
-)
+/*insert into users values ('biba1','biba2','biba3')*/
