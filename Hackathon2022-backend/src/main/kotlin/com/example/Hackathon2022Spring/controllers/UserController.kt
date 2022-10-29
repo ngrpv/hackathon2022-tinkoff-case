@@ -12,10 +12,10 @@ import kotlin.random.asKotlinRandom
 @Controller
 class UserController @Inject constructor(val userRepository: UserRepository) {
 
-    @GetMapping("/user/{userName}")
+    @GetMapping("/user/{email}")
     @ResponseBody
-    fun getUser(@PathVariable userName: String): User {
-        return userRepository.findUserByUserName(userName)
+    fun getUser(@PathVariable email: String): User {
+        return userRepository.findUserByEmail(email)
     }
 
     @GetMapping("add")

@@ -8,6 +8,5 @@ import org.springframework.stereotype.Service
 @Service
 @Repository
 interface UserRepository : CrudRepository<User, String> {
-    fun findUserByUserName(userName: String): User
     fun findUserByEmail(email: String): User
 }
