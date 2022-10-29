@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="musicgenres_array">
+        <item>Horror</item>
+        <item>Drama</item>
+        <item>Comedy</item>
+        <item>Sci-Fi</item>
+        <item>Thriller</item>
+    </string-array>
+</resources>
