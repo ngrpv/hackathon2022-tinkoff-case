@@ -31,7 +31,7 @@ class RegistrationController @Inject constructor(val registerInfoRepository: Reg
             LoginResponseType.UnknownEmail
         } else {
             user.isActive=true;
-            LoginResponseType.Success
+            LoginResponseType.Successful
         }
     }
 
@@ -39,7 +39,7 @@ class RegistrationController @Inject constructor(val registerInfoRepository: Reg
     fun logout(@RequestBody registerInfo: RegisterInfo): LogoutResponseType{
         val user = registerInfoRepository.getByEmail(registerInfo.email)
         user.isActive=false
-        return LogoutResponseType.SuccessFul
+        return LogoutResponseType.Successful
     }
 
 }
