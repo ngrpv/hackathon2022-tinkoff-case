@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genres_array">
+        <item>Rap</item>
+        <item>Classic</item>
+        <item>Russian</item>
+        <item>aboba</item>
+
+    </string-array>
+</resources>

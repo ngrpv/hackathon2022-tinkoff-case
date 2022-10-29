@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookgenres_array">
+        <item>Comic Book or Graphic Novel</item>
+        <item>Detective and Mystery</item>
+        <item>Historical Fiction</item>
+        <item>Literary Fiction</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gamegenres_array">
+        <item>Shooter</item>
+        <item>RPG</item>
+        <item>MOBA</item>
+        <item>Arcade</item>
+
+    </string-array>
+</resources>
