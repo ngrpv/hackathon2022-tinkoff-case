@@ -8,7 +8,7 @@ import javax.persistence.Id
 class User() {
     @Id
     @GeneratedValue
-    val id : Long;
+    val id : Long=0;
 
     constructor(userName: String, email: String, password: String) : this() {
 
