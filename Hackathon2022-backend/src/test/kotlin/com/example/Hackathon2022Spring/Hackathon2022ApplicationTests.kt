@@ -8,6 +8,7 @@ class Hackathon2022ApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		//
 	}
 
 }
