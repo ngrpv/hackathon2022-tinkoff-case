@@ -1,13 +1,12 @@
 package com.example.Hackathon2022Spring.repositories
 
-import com.example.Hackathon2022Spring.models.User
+import com.example.Hackathon2022Spring.models.FormAnswer
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 import org.springframework.stereotype.Service
 
-@Service
 @Repository
-interface UserRepository : CrudRepository<User, String> {
-    fun findUserByUserName(userName: String): User
-    fun findUserByEmail(email: String): User
+@Service
+interface FormAnswerRepository : CrudRepository<FormAnswer, Long>{
+    fun findFormAnswersByUsername(username: String): List<FormAnswer>
 }

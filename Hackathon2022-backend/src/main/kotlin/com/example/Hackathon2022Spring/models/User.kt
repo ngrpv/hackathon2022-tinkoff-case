@@ -6,7 +6,7 @@ import javax.persistence.Id
 
 @Entity(name = "users")
 class User(@Id val email: String, val userName: String, var isActive:Boolean) {
-    constructor() : this("","",false) {
+    constructor() : this("1","",false) {
 
     }
 }

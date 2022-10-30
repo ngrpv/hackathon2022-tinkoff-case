@@ -9,41 +9,46 @@ import com.example.Hackathon2022Spring.repositories.UserRepository
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.ResponseBody
 import javax.inject.Inject
 
 @Controller
 class RegistrationController @Inject constructor(
     val registerInfoRepository: RegisterInfoRepository,
-    val userRepository: UserRepository) {
+    val userRepository: UserRepository
+) {
 
     @GetMapping("/register")
+    @ResponseBody
     fun register(@RequestBody registerInfo: RegisterInfo): RegisterResponseType {
         val user = registerInfoRepository.getByEmail(registerInfo.email);
-        return if (user.equals(null)){
+        return if (user.equals(null)) {
             registerInfoRepository.save(registerInfo)
             RegisterResponseType.Successful;
-        } else{
+        } else {
             RegisterResponseType.EmailExists;
         }
     }
 
     @GetMapping("/login")
-    fun login(@RequestBody registerInfo : RegisterInfo) : LoginResponseType {
+    @ResponseBody
+    fun login(@RequestBody registerInfo: RegisterInfo): LoginResponseType {
         val user = registerInfoRepository.getByEmail(registerInfo.email)
-        return if (user.equals(null)){
+        return if (user.equals(null)) {
             LoginResponseType.UnknownEmail
         } else {
-            val userFromUsers=userRepository.findUserByEmail(user.email)
-            userFromUsers.isActive=true;
+            val userFromUsers = userRepository.findUserByEmail(user.email)
+            userFromUsers.isActive = true;
             LoginResponseType.Successful
         }
     }
 
     @GetMapping("/logout")
-    fun logout(@RequestBody registerInfo: RegisterInfo): LogoutResponseType{
+    @ResponseBody
+    fun logout(@RequestBody registerInfo: RegisterInfo): LogoutResponseType {
         val user = registerInfoRepository.getByEmail(registerInfo.email)
-        val userFromUsers=userRepository.findUserByEmail(user.email)
-        userFromUsers.isActive=true;
+        val userFromUsers = userRepository.findUserByEmail(user.email)
+        userFromUsers.isActive = true;
         return LogoutResponseType.Successful
     }
 
