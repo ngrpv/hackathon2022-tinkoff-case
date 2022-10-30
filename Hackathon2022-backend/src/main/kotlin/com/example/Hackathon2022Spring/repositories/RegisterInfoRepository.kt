@@ -10,5 +10,4 @@ import org.springframework.stereotype.Service
 @Service
 @Repository
 interface RegisterInfoRepository : CrudRepository<RegisterInfo, String> {
-    fun getByEmail(email: String) : RegisterInfo
 }

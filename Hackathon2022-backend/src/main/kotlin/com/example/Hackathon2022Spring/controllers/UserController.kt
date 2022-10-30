@@ -15,7 +15,7 @@ class UserController @Inject constructor(val userRepository: UserRepository) {
     @GetMapping("/user/{email}")
     @ResponseBody
     fun getUser(@PathVariable email: String): User {
-        return userRepository.findUserByEmail(email)
+        return userRepository.findById(email).get()
     }
 
     @GetMapping("add")

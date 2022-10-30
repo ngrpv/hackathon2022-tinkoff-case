@@ -12,6 +12,7 @@ import javax.persistence.Id
 @RequestMapping("form")
 class FormController() {
     @GetMapping("/{form_id}")
+    @ResponseBody
     fun getForm(@PathVariable form_id: Long): Form? {
         return Form(
             1,
